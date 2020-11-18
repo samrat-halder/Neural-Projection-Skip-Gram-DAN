@@ -13,7 +13,7 @@ import scipy.sparse as sp
 from operator import itemgetter
 import numpy as np
 
-if __name__ = '__main__':
+if __name__ == '__main__':
 
     proc_data = load_pickle( './data', f'proc_data_{n}_{data}.pkl')
     #fit LSH projection pipeline

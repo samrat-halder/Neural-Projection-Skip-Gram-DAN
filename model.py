@@ -82,4 +82,4 @@ for epoch in range(1, num_epoch):
               print('\tProcessed {} skip-grams'.format(i))
           loss += np_sg_model.train_on_batch(X,Y)  
 
-      print('Loss:', loss)
+      print('Loss:', round(loss,4))

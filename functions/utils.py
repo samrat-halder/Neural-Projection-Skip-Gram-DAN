@@ -1,11 +1,19 @@
+from config import *
 import pickle
 import os
+
 #tensorflow
 import tensorflow as tf
 from tensorflow.keras.layers import Input
-from tensorflow.keras.models import Model
 from tensorflow.keras.layers import Dense, Reshape
 from tensorflow.keras.layers import dot
+from tensorflow.keras.layers import Embedding
+from tensorflow.keras.layers import BatchNormalization, Activation, Dropout
+from tensorflow.keras.models import Model
+from tensorflow.keras.optimizers import Adagrad, Adam
+from tensorflow.keras import backend as K
+
+from functions.custom_layers import *
 
 def dump_pickle(obj, data_dir, fname):
     with open(os.path.join(data_dir, fname), 'wb') as f:
@@ -17,7 +25,7 @@ def load_pickle(data_dir, fname):
         obj = pickle.load(f)
     return obj
 
-def model(projection_dim=1120, emb_dim=100):
+def model_skip_gram(projection_dim=1120, emb_dim=100):
     input_target = Input((projection_dim,))
     input_context = Input((projection_dim,))
     model = tf.keras.models.Sequential()
@@ -53,3 +61,29 @@ def model(projection_dim=1120, emb_dim=100):
     print(model1.summary())
 
     return model1
+
+def model_dan(vocab_size, embedding_matrix, input_length, embedding_dim=100, num_class=5):
+    model = tf.keras.models.Sequential()
+
+    model.add(Embedding(vocab_size,embedding_dim,weights=[embedding_matrix],input_length=input_length,trainable=False))
+
+    model.add(WordDropout(word_dropout_rate))
+    model.add(AverageWords())
+
+    for i in range(num_hidden_layers):
+        model.add(Dense(num_hidden_units))
+        model.add(BatchNormalization())
+        model.add(Activation(activation))
+        model.add(Dropout(dropout_rate))
+
+    model.add(Dense(num_class))
+    model.add(BatchNormalization())
+    model.add(Dropout(dropout_rate))
+    model.add(Activation('softmax'))
+
+    adam = Adam()
+    model.compile(loss='categorical_crossentropy',optimizer=adam,metrics=['categorical_accuracy'])
+
+    model.summary()
+    
+    return model

@@ -35,8 +35,10 @@ if __name__ == '__main__':
 
     proc_data = preprocess(raw_data)
     if test:
+        print(f'total size of train data for {data} corpus is {len(proc_data)} but this is test and we take first {n} examples')
         proc_data = proc_data[:n]
-
+    
+    print(proc_data[:2])
     tokenizer = text.Tokenizer()
     tokenizer.fit_on_texts(proc_data)
     word2id = tokenizer.word_index

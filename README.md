@@ -11,6 +11,9 @@ This repository contains end-to-end implementation of Neural Projection with Ski
 TO BE UPDATED SOON
 
 ### Datasets
+
+We have initially developed the pipeline to use SST-Fine, and Bible Corpus for training the NP-SG model and SST-Fine dataset for classification task.
+
 1. SST-Fine
 2. Bible corpus (from nltk)
 3. enwiki9 - (TODO)

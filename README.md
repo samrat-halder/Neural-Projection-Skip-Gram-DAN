@@ -5,8 +5,8 @@ This repository contains end-to-end implementation of Neural Projection with Ski
 ### Steps
 
 1. You need to set the input parameters for in `config.py` 
-2. Run `pip install -r requirements.txt `
-3. Run `python setup.py`
+2. Run `pip install -r requirements.txt `. This will download and install all the required packages.
+3. Run `python setup.py`. This will set-up the directory structure and download required corpora for experiments.
 
 TO BE UPDATED SOON
 

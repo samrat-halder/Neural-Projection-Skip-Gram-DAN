@@ -4,8 +4,8 @@ from sklearn.pipeline import Pipeline, FeatureUnion
 from sklearn.random_projection import SparseRandomProjection
 from sklearn.base import BaseEstimator, TransformerMixin
 from sklearn.metrics.pairwise import cosine_similarity
+
 from collections import Counter
-from pprint import pprint
 import scipy.sparse as sp
 
 

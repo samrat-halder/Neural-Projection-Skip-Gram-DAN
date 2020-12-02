@@ -2,7 +2,6 @@ from config import *
 import pickle
 import os
 
-#tensorflow
 import tensorflow as tf
 from tensorflow.keras.layers import Input
 from tensorflow.keras.layers import Dense, Reshape

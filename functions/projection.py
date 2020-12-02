@@ -8,7 +8,6 @@ from sklearn.metrics.pairwise import cosine_similarity
 from collections import Counter
 import scipy.sparse as sp
 
-
 class WordTokenizer(BaseEstimator, TransformerMixin):
     
     def fit(self, X, y=None):
@@ -24,7 +23,6 @@ class WordTokenizer(BaseEstimator, TransformerMixin):
             for sentence in X
         ]
         return out
-
 
 class CountVectorizer3D(CountVectorizer):
 

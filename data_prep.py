@@ -14,17 +14,6 @@ if __name__ == '__main__':
     if data == 'bible_corpus':
         raw_data = gutenberg.sents('bible-kjv.txt') 
     elif data == 'sst_fine':
-        out_path = os.path.join('./data', 'sst_{}.txt')
-        dataset = pytreebank.load_sst('./raw_data')
-
-        # Store train, dev and test in separate files
-        for category in ['train', 'test', 'dev']:
-            with open(out_path.format(category), 'w') as outfile:
-                for item in dataset[category]:
-                    outfile.write("__label__{}\t{}\n".format(
-                        item.to_labeled_lines()[0][0] + 1,
-                        item.to_labeled_lines()[0][1]
-                    ))
         # Print the length of the training set
         #print(len(dataset['train']))
         df = pd.read_csv('./data/sst_train.txt', sep='\t', header=None, names=['truth', 'text'])
@@ -37,7 +26,7 @@ if __name__ == '__main__':
     if test:
         print(f'total size of train data for {data} corpus is {len(proc_data)} but this is test and we take first {n} examples')
         proc_data = proc_data[:n]
-    
+    print('processing data to generate skip-gram pairs..') 
     print(proc_data[:2])
     tokenizer = text.Tokenizer()
     tokenizer.fit_on_texts(proc_data)
@@ -58,8 +47,11 @@ if __name__ == '__main__':
                   id2word[pairs[i][0]], pairs[i][0], 
                   id2word[pairs[i][1]], pairs[i][1], 
                   labels[i]))
+    print('saving..')
 
     dump_pickle(proc_data, './data', f'proc_data_{n}_{data}.pkl')
     dump_pickle(skip_grams, './data', f'skip_grams_{n}_{data}.pkl')
     dump_pickle(word2id, './data', f'w2id_{n}_{data}.pkl')
     dump_pickle(id2word, './data', f'id2w_{n}_{data}.pkl')
+
+    print('all finished!')

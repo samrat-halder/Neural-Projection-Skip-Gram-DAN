@@ -61,7 +61,9 @@ def model_skip_gram(projection_dim=1120, emb_dim=100):
 
     return model1
 
-def model_dan(vocab_size, embedding_matrix, input_length, embedding_dim=100, num_class=5):
+def model_dan(vocab_size, embedding_matrix, input_length, 
+        embedding_dim=100, num_class=5, num_hidden_layers = 3):
+    
     model = tf.keras.models.Sequential()
 
     model.add(Embedding(vocab_size,embedding_dim,weights=[embedding_matrix],input_length=input_length,trainable=False))

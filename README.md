@@ -19,5 +19,6 @@ We have initially developed the pipeline to use SST-Fine, and Bible Corpus for t
 3. enwiki9 - (TODO)
 
 ### References
-1. [Neural Projection Skip-Gram] (https://arxiv.org/pdf/1906.01605.pdf)
-2. [Deep Averaging Network] (https://people.cs.umass.edu/~miyyer/pubs/2015_acl_dan.pdf)
+
+1. Neural Projection Skip-Gram (https://arxiv.org/pdf/1906.01605.pdf)
+2. Deep Averaging Network (https://people.cs.umass.edu/~miyyer/pubs/2015_acl_dan.pdf)

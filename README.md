@@ -1,6 +1,6 @@
 # Neural-Projection-Skip-Gram with DAN
 
-This repository contains end-to-end implementation of Neural Projection with Skip Gram (NP-SG) and Deep Averaging Network (DAN) model. We first train a NP-SG model and then leverage the trained projected embeddings to train a DAN for SST-fine classification task. Our goal is to compare the performance with embeddings from Language models.
+This repository contains end-to-end implementation of Neural Projection with Skip Gram (NP-SG) and Deep Averaging Network (DAN) model. We first train a NP-SG model and then leverage the trained projected embeddings to train a DAN for SST-fine classification task. Our goal is to compare the performance of projection based on the fly embeddings generated from locally sensitive hashing with static and non-static embeddings.
 
 ### Steps
 
@@ -12,7 +12,7 @@ TO BE UPDATED SOON
 
 ### Datasets
 
-We have initially developed the pipeline to use SST-Fine, and Bible Corpus for training the NP-SG model and SST-Fine dataset for classification task.
+We have initially developed the pipeline to use SST-Fine, and Bible Corpus for training the NP-SG model alongwith a DAN model on SST-Fine dataset for classification task.
 
 1. SST-Fine
 2. Bible corpus (from nltk)

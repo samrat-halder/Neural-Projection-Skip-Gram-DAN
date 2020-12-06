@@ -7,6 +7,40 @@ This repository contains end-to-end implementation of Neural Projection with Ski
 1. You need to set the input parameters for in `config.py` 
 2. Run `pip install -r requirements.txt `. This will download and install all the required packages.
 3. Run `python setup.py`. This will set-up the directory structure and download required corpora for experiments.
+4. Now the user needs to set the `config.py` script before running experiments. The experiments spans over two steps - 
+  a. Training a NP-SG model with some corpus (we use a chunk from the SST-fine training data set). The larger this corpus the better it is.
+  b. Using the embeddings from step 1, for any downstream task e.g. we train a DAN model for SST-fine data
+  
+  A typical `config` file looks like this:
+  `test = True
+  n = 5000 #first n sentence if test
+  data = 'sst_fine' #'bible_corpus' #sst_fine
+  #NP-SG setting
+  window_size=5
+  num_epoch = 5
+  # Projection settings
+  char_ngram_range = (1, 4)
+  char_term_frequency_params = {
+        'char_term_frequency__analyzer': 'char',
+        'char_term_frequency__lowercase': True,
+        'char_term_frequency__ngram_range': char_ngram_range,
+        'char_term_frequency__strip_accents': None,
+        'char_term_frequency__min_df': 2,
+        'char_term_frequency__max_df': 0.99,
+        'char_term_frequency__max_features': int(1e7),
+    }
+  T = 80
+  d = 14
+
+  # DAN network settings
+  embedding_dim = 100
+  num_hidden_layers = 3
+  num_hidden_units = 500
+  num_epochs = 100
+  batch_size = 128
+  dropout_rate = 0.2
+  word_dropout_rate = 0.3
+  activation = 'relu'`
 
 TO BE UPDATED SOON
 

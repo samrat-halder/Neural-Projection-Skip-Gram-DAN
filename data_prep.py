@@ -14,8 +14,6 @@ if __name__ == '__main__':
     if data == 'bible_corpus':
         raw_data = gutenberg.sents('bible-kjv.txt') 
     elif data == 'sst_fine':
-        # Print the length of the training set
-        #print(len(dataset['train']))
         df = pd.read_csv('./data/sst_train.txt', sep='\t', header=None, names=['truth', 'text'])
         df['truth'] = df['truth'].str.replace('__label__', '')
         df['truth'] = df['truth'].astype(int).astype('category')

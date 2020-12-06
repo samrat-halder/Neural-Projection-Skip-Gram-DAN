@@ -87,8 +87,8 @@ if __name__ == '__main__':
             X = [after_1[0].toarray(), after_2[0].toarray()]
             Y = labels
 
-            if i % 1000 == 0:
-                print('\tProcessed {} skip-grams'.format(i))
+            if i % 1000 == 0 and i != 0:
+                print('\tProcessed skip-grams from {} sentences'.format(i))
             loss += np_sg_model.train_on_batch(X,Y)  
 
         print('Loss:', round(loss,4))

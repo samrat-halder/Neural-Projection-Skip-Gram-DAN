@@ -18,7 +18,7 @@ This repository contains end-to-end implementation of Neural Projection with Ski
   #NP-SG setting
   window_size=5
   num_epoch = 5
-  # Projection settings
+
   char_ngram_range = (1, 4)
   char_term_frequency_params = {
         'char_term_frequency__analyzer': 'char',
@@ -32,7 +32,6 @@ This repository contains end-to-end implementation of Neural Projection with Ski
   T = 80
   d = 14
 
-  # DAN network settings
   embedding_dim = 100
   num_hidden_layers = 3
   num_hidden_units = 500

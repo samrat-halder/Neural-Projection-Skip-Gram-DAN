@@ -38,7 +38,7 @@ if __name__ == '__main__':
     print('Vocabulary Sample:', list(word2id.items())[:10])
 
     # generate skip-grams
-    skip_grams = [skipgrams(wid, vocabulary_size=vocab_size, window_size=10) for wid in wids]
+    skip_grams = [skipgrams(wid, vocabulary_size=vocab_size, window_size=window_size) for wid in wids]
 
     # view sample skip-grams
     pairs, labels = skip_grams[0][0], skip_grams[0][1]

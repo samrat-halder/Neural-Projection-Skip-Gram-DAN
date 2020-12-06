@@ -1,7 +1,9 @@
 test = True
-n = 1000 #first n sentence if test
+n = 5000 #first n sentence if test
 data = 'sst_fine' #'bible_corpus' #sst_fine
-num_epoch = 1
+#NP-SG setting
+window_size=5
+num_epoch = 5
 # Projection settings
 char_ngram_range = (1, 4)
 char_term_frequency_params = {
@@ -15,6 +17,7 @@ char_term_frequency_params = {
     }
 T = 80
 d = 14
+
 # DAN network settings
 embedding_dim = 100
 num_hidden_layers = 3

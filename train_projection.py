@@ -88,10 +88,8 @@ if __name__ == '__main__':
             Y = labels
 
             if i % 1000 == 0 and i != 0:
-                print('\tProcessed skip-grams from {} sentences'.format(i))
-            loss += np_sg_model.train_on_batch(X,Y)  
-
-        print('Loss:', round(loss,4))
+                print(f'\tProcessed skip-grams from {i} sentences | Loss: {loss}')
+            loss += np_sg_model.train_on_batch(X,Y) 
 
     #prepare embedding matrix for DAN training
     print('preparing embedding matrix...')

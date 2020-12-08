@@ -1,6 +1,7 @@
 from config import *
 import pickle
 import os
+import random
 
 import tensorflow as tf
 from tensorflow.keras.layers import Input
@@ -13,6 +14,16 @@ from tensorflow.keras.optimizers import Adagrad, Adam
 from tensorflow.keras import backend as K
 
 from functions.custom_layers import *
+
+def gen_seed(idx, n=100):
+  random.seed(12345)
+
+  seeds = []
+  for i in range(n):
+    s = random.random()
+    seeds.append(s)
+
+  return seeds[idx]
 
 def dump_pickle(obj, data_dir, fname):
     with open(os.path.join(data_dir, fname), 'wb') as f:
@@ -55,7 +66,7 @@ def model_skip_gram(projection_dim=1120, emb_dim=100):
     # add the sigmoid output layer
     output = Dense(1, activation='sigmoid')(dot_product)
     model1 = Model([input_target, input_context], output)
-    model1.compile(loss='mean_squared_error', optimizer='rmsprop')
+    model1.compile(loss='mean_squared_error', optimizer='adam')
     # view model summary
     print(model1.summary())
 

@@ -34,7 +34,7 @@ if __name__ == '__main__':
     wids = [[word2id[w] for w in text.text_to_word_sequence(doc)] for doc in proc_data]
     print('Vocabulary Size:', vocab_size)
     print('Vocabulary Sample:', list(word2id.items())[:10])
-
+    # print(wids)
     # generate skip-grams
     skip_grams = [skipgrams(wid, vocabulary_size=vocab_size, window_size=window_size) for wid in wids]
 

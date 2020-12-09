@@ -2,6 +2,7 @@ from config import *
 import numpy as np
 
 from functions.utils import *
+from functions.models import *
 from functions.preprocess import *
 
 if __name__ == "__main__":

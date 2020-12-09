@@ -2,6 +2,7 @@ from config import *
 from functions.utils import *
 from functions.projection import *
 from functions.preprocess import *
+from functions.models import *
 
 import sklearn
 from sklearn.feature_extraction.text import CountVectorizer
@@ -55,7 +56,7 @@ if __name__ == '__main__':
     before = pipeline.named_steps["char_term_frequency"].transform(words_to_project)
     after = pipeline.named_steps["union"].transform(before)
     print('saving projection array...')
-    np.save(f'./data/projections_{n}_{data}.npy', after[0].toarray())
+    np.save(f'./data/projections_sst_fine.npy', after[0].toarray())
     print(after[0].toarray().shape)
     #print(words_to_project)
     #print(after[0].toarray()[:10])
@@ -93,9 +94,9 @@ if __name__ == '__main__':
 
     #prepare embedding matrix for DAN training
     print('preparing embedding matrix...')
-    projection_matrix = np.load(f'./data/projections_{n}_{data}.npy')
+    projection_matrix = np.load(f'./data/projections_sst_fine.npy')
     get_embedding_layer_output = K.function([np_sg_model.layers[0].input],
                                                 [np_sg_model.layers[3].output])
     embedding_output = get_embedding_layer_output([projection_matrix])[0]
     print(embedding_output.shape)
-    np.save(f'./data/emebddings_{n}_{data}.npy', embedding_output)
+    np.save(f'./data/emebddings_sst_fine.npy', embedding_output)

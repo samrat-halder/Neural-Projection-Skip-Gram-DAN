@@ -1,8 +1,8 @@
 test = True
-n = 1000 #first n sentence if test
-data = 'sst_fine' #'bible_corpus' #sst_fine
+n = 25000 #first n sentence if test
+data = 'wiki9' #'bible_corpus' #sst_fine
 #NP-SG setting
-window_size=5
+window_size=10
 num_epoch = 1
 # Projection settings
 char_ngram_range = (1, 4)

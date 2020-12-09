@@ -5,12 +5,12 @@ from functions.projection import *
 from functions.utils import *
 import pytreebank
 import os
+import glob
 import pandas as pd
 from keras.preprocessing import text
 from keras.preprocessing.sequence import skipgrams
 
 if __name__ == '__main__':
-
     if data == 'bible_corpus':
         raw_data = gutenberg.sents('bible-kjv.txt') 
     elif data == 'sst_fine':
@@ -19,11 +19,22 @@ if __name__ == '__main__':
         df['truth'] = df['truth'].astype(int).astype('category')
         print(df[:2])
         raw_data = [sent.split(' ') for sent in list(df['text'])]
+    elif data == 'wiki9':
+        raw_data = []
+        for file in glob.glob('./data/wiki9/articles/*')[:n]:
+            with open(file, 'r') as f:
+                raw_data += f.readlines()
+            f.close()
+        raw_data = [sent.split(' ') for sent in raw_data]
 
     proc_data = preprocess(raw_data)
+    del raw_data
     if test:
-        print(f'total size of train data for {data} corpus is {len(proc_data)} but this is test and we take first {n} examples')
+        print('-------------------------')
+        print(f'total size of train data for {data} corpus is {len(proc_data)} but this is test and we take first {n} examples\n')
         proc_data = proc_data[:n]
+    else:
+        n = len(proc_data)
     print('processing data to generate skip-gram pairs..') 
     print(proc_data[:2])
     tokenizer = text.Tokenizer()

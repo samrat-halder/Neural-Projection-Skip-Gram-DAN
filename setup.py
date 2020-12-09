@@ -28,3 +28,7 @@ for category in ['train', 'test', 'dev']:
                             item.to_labeled_lines()[0][1]
                             ))
 print('all set-up completeed successfully!')
+
+# This will throw an error at the end of the script : TODO: FIXME
+from functions.wiki9 import write_wiki9_articles
+write_wiki9_articles()

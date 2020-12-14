@@ -57,6 +57,9 @@ if __name__ == '__main__':
     after = pipeline.named_steps["union"].transform(before)
     print('saving projection array...')
     np.save(f'./data/projections_sst_fine.npy', after[0].toarray())
+    del after
+    del before
+    del words_to_project
     print(after[0].toarray().shape)
     #print(words_to_project)
     #print(after[0].toarray()[:10])
@@ -88,10 +91,11 @@ if __name__ == '__main__':
             X = [after_1[0].toarray(), after_2[0].toarray()]
             Y = labels
 
-            if i % 1000 == 0 and i != 0:
+            if i % 100 == 0 and i != 0:
                 print(f'\tProcessed skip-grams from {i} sentences | Loss: {loss}')
             loss += np_sg_model.train_on_batch(X,Y) 
 
+    del skip_grams
     #prepare embedding matrix for DAN training
     print('preparing embedding matrix...')
     projection_matrix = np.load(f'./data/projections_sst_fine.npy')

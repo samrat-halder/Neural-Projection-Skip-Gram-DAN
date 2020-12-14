@@ -11,7 +11,7 @@ if __name__ == "__main__":
     pp.tokenize()
     data_train, labels_train, data_val, labels_val = pp.make_data()
 
-    embedding_matrix = np.load(f'./data/emebddings_{n}_{data}.npy')
+    embedding_matrix = np.load(f'./data/emebddings_sst_fine.npy')
     embedding_matrix = embedding_matrix.reshape(embedding_matrix.shape[0], embedding_matrix.shape[1])
 
     model = model_dan(len(pp.word_index)+1, embedding_matrix, pp.MAX_SEQUENCE_LENGTH, embedding_dim=100, num_class=labels_train.shape[1])
@@ -24,7 +24,7 @@ if __name__ == "__main__":
     # Create a callback that saves the model's weights every 10 epochs
     cp_callback = tf.keras.callbacks.ModelCheckpoint(
                                                     filepath='./model/',
-                                                    verbose=1,
+                                                    verbose=0,
                                                     save_weights_only=True,
                                                     save_freq= 5
                                                     )

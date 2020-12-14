@@ -24,6 +24,8 @@ def model_skip_gram(projection_dim=1120, emb_dim=100):
         bias_initializer='zeros',
         activation='relu')
     )
+    model.add(tf.keras.layers.Dropout(0.65))
+
     # add hidden layer
     model.add(
         tf.keras.layers.Dense(
@@ -33,6 +35,8 @@ def model_skip_gram(projection_dim=1120, emb_dim=100):
         bias_initializer='zeros',
         activation='relu')
     )
+    model.add(tf.keras.layers.Dropout(0.65))
+    
     word_embedding = model(input_target)
     word_embedding = Reshape((emb_dim, 1))(word_embedding)
     context_embedding = model(input_context)
@@ -54,7 +58,7 @@ def model_dan(vocab_size, embedding_matrix, input_length,
 
     model = tf.keras.models.Sequential()
 
-    model.add(Embedding(vocab_size,embedding_dim,weights=[embedding_matrix],input_length=input_length,trainable=False))
+    model.add(Embedding(vocab_size,embedding_dim,weights=[embedding_matrix],input_length=input_length,trainable=trainable))
 
     model.add(WordDropout(word_dropout_rate))
     model.add(AverageWords())

@@ -60,9 +60,9 @@ if __name__ == '__main__':
     del after
     del before
     del words_to_project
-    print(after[0].toarray().shape)
-    #print(words_to_project)
-    #print(after[0].toarray()[:10])
+    # print(after[0].toarray().shape)
+    # print(words_to_project)
+    # print(after[0].toarray()[:10])
     print('done!')
     print('_____________________')
     

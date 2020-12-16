@@ -16,6 +16,13 @@ import scipy.sparse as sp
 from operator import itemgetter
 import numpy as np
 
+import tensorflow as tf
+from keras import backend as K
+config = tf.compat.v1.ConfigProto()
+config.gpu_options.allow_growth = True
+config.log_device_placement = True
+
+
 if __name__ == '__main__':
 
     proc_data = load_pickle( './data', f'proc_data_{n}_{data}.pkl')
@@ -72,6 +79,8 @@ if __name__ == '__main__':
     skip_grams = load_pickle('./data', f'skip_grams_{n}_{data}.pkl')
 
     print('model training started...')
+    session = tf.compat.v1.Session(config=config)
+    tf.compat.v1.keras.backend.set_session(session)
     #train
     for epoch in range(1, num_epoch+1):
         print('Epoch:', epoch)
@@ -96,6 +105,8 @@ if __name__ == '__main__':
             loss += np_sg_model.train_on_batch(X,Y) 
 
     del skip_grams
+    tf.compat.v1.keras.backend.get_session().close()
+
     #prepare embedding matrix for DAN training
     print('preparing embedding matrix...')
     projection_matrix = np.load(f'./data/projections_sst_fine.npy')

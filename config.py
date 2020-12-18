@@ -1,9 +1,10 @@
 test = True
-n = 2500 #first n sentence if test
+n = 1000 #first n sentence if test
 data = 'wiki9' #'bible_corpus' #sst_fine
 #NP-SG setting
-window_size=5
+window_size=10
 num_epoch = 2
+max_batch_size = 25000
 # Projection settings
 char_ngram_range = (1, 4)
 char_term_frequency_params = {
@@ -19,11 +20,11 @@ T = 80
 d = 14
 
 # DAN network settings
-trainable = False
+trainable = True
 embedding_dim = 100
 num_hidden_layers = 3
 num_hidden_units = 500
-num_epochs = 20
+num_epochs = 50
 batch_size = 128
 dropout_rate = 0.4
 word_dropout_rate = 0.3

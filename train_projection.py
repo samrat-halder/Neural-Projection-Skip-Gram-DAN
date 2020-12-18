@@ -100,6 +100,9 @@ if __name__ == '__main__':
                 # print(i)
                 pair_first_elem = np.array(list(zip(*elem[0]))[0], dtype='int32')
                 pair_second_elem = np.array(list(zip(*elem[0]))[1], dtype='int32')
+                if np.size(pair_first_elem) > max_batch_size:
+                    print(f'Warning: {np.size(pair_first_elem)} > specified limit of {max_batch_size}. sequence: {batch_id},{i} skipped.')
+                    continue
                 first_words_to_hash = [list(itemgetter(*pair_first_elem)(id2word))]
                 before_1 = pipeline.named_steps["char_term_frequency"].transform(first_words_to_hash)
                 after_1 = pipeline.named_steps["union"].transform(before_1)
@@ -111,12 +114,11 @@ if __name__ == '__main__':
                 labels = np.array(elem[1], dtype='int32')
                 X = [after_1[0].toarray(), after_2[0].toarray()]
                 Y = labels
-
-                if len(Y) > max_batch_size:
-                    print(f'Warning: number of skip-grams in this batch {i} is {len(Y)} > {max_batch_size}. To avoid OOM skipping this batch')
-                    continue
-
                 # print(len(Y))
+                # if len(Y) > max_batch_size:
+                #    print(f'Warning: number of skip-grams in this batch {i} is {len(Y)} > {max_batch_size}. To avoid OOM skipping this batch')
+                #    continue
+
                 # if i % 100 == 0 and i != 0:
                 loss += np_sg_model.train_on_batch(X,Y)
 

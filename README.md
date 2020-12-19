@@ -6,17 +6,23 @@ This repository contains end-to-end implementation of Neural Projection with Ski
 
 
 1. Clone the repository.
+
 2. Run `pip install -r requirements.txt `. This will download and install all the required packages.
+
 3. Run `python setup.py`. This will set-up the directory structure and download required corpora for experiments.
+
 4. Download wiki9 data from https://drive.google.com/file/d/1IxrDntl73wrQx3yxzN6rIIsRMFQDC-9e/view?usp=sharing (hosted on my Google Drive) to the data directory and untar it. 
+
 4. Set the `config.py` script before running experiments. The experiments spans over two steps - \
   a. Training a NP-SG model with some corpus (we use a chunk of wiki9). The larger this corpus the better it is.\
-  b. Using the embeddings from step 1, for any downstream task e.g. we train a DAN model for SST-fine data\
+  b. Using the embeddings from step 1, for any downstream task e.g. we train a DAN model for SST-fine data
+  
 5. To test the setup set n=1000, test=True. 
+
 6. To run a complete experiement run the following three scripts:\
   a. `python3 data_prep.py`\
   b. `python3 train_projection.py`\
-  c. `python3 train_dan.py`\
+  c. `python3 train_dan.py`
   
 7. Set n >= 10,000 to train the NP-SG model on alarger dataset.
 

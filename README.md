@@ -37,7 +37,7 @@ This repository contains end-to-end implementation of Neural Projection with Ski
 | No | Wiki-9 | 1000 | 27.88% | 
 | Yes | Wiki-9 | 1000 | 38.51% | 
 | No | Wiki-9 | 5000 | 29.7% |
-| Yes | Wiki-90| 5000 | 39.1% |
+| Yes | Wiki-9 | 5000 | 39.1% |
 
 
 ### Datasets

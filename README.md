@@ -11,7 +11,7 @@ This repository contains end-to-end implementation of Neural Projection with Ski
 
 3. Run `python setup.py`. This will set-up the directory structure and download required corpora for experiments.
 
-4. Download wiki9 data from https://drive.google.com/file/d/1IxrDntl73wrQx3yxzN6rIIsRMFQDC-9e/view?usp=sharing (hosted on my Google Drive) to the data directory and untar it. 
+4. Request for enWiki9 dataset at sh3970@columbia.edu. 
 
 4. Set the `config.py` script before running experiments. The experiments spans over two steps - \
   a. Training a NP-SG model with some corpus (we use a chunk of wiki9). The larger this corpus the better it is.\

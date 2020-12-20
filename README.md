@@ -23,7 +23,8 @@ This repository contains end-to-end implementation of Neural Projection with Ski
   a. `python3 data_prep.py`\
   b. `python3 train_projection.py`\
   c. `python3 train_dan.py` \
-  OR you can run the bash script `run.sh` 
+  OR \
+  you can run the bash script `run.sh` 
   
 7. Set n >= 10,000 to train the NP-SG model on alarger dataset.
 

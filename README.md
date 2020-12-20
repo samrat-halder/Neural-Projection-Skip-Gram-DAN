@@ -37,9 +37,11 @@ This repository contains end-to-end implementation of Neural Projection with Ski
 | No | SST-Fine | 7000 | 30.9% |
 | Yes | SST-Fine | 7000 | 37.68% |
 | No | enWiki9 | 1000 | 27.88% | 
-| Yes | enWiki9 | 1000 | 38.51% | 
+| Yes | enWiki9 | 1000 | 37.51% | 
 | No | enWiki9 | 5000 | 29.7% |
-| Yes | enWiki9 | 5000 | 39.1% |
+| Yes | enWiki9 | 5000 | 38.1% |
+| No | enWiki9 | 30000 | 30.43% |
+| Yes | enWiki9 | 30000 | 38.42 | 
 
 
 ### Datasets

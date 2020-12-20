@@ -39,6 +39,18 @@ This repository contains end-to-end implementation of Neural Projection with Ski
 | No | Wiki-9 | 5000 | 29.7% |
 | Yes | Wiki-90| 5000 | 39.1% |
 
+
+| Class | Precision	| Recall	| f1 |
+| :---: | :---: | :---: | :---: |
+| INTP | 0.47	| 0.45 | 0.46 |
+| INTJ | 0.39 |	0.69 | 	0.5 |
+| INFP | 0.35 |	0.27 |	0.31 |
+| INFJ | 0.4 | 0.24 |	0.3 |
+| ENTP | 0.55 |	0.12 | 0.2 |
+| ENFP | 0.37 |	0.1 |	0.15 |
+| ENTJ | 0.38 |	0.05 | 0.09 |
+| ENFJ | 0.28 |	0.04 | 0.07 |
+
 ### Datasets
 
 We have initially developed the pipeline to use wiki9, SST-Fine, and Bible Corpus for training the NP-SG model alongwith a DAN model on SST-Fine dataset for five class classification task.

@@ -31,14 +31,14 @@ This repository contains end-to-end implementation of Neural Projection with Ski
 
 ## Results
 
-| Trainable Embedding? | NP-SG train Dataset | Size | Test Acc. (SST-Fine) |
+| Trainable Embedding? | NP-SG train Dataset | Skip-gram train Size | Test Acc. (SST-Fine) |
 | :---: | :---: | :---: | :---: | 
 | No | SST-Fine | 7000 | 30.9% |
 | Yes | SST-Fine | 7000 | 37.68% |
-| No | Wiki-9 | 1000 | 27.88% | 
-| Yes | Wiki-9 | 1000 | 38.51% | 
-| No | Wiki-9 | 5000 | 29.7% |
-| Yes | Wiki-9 | 5000 | 39.1% |
+| No | enWiki9 | 1000 | 27.88% | 
+| Yes | enWiki9 | 1000 | 38.51% | 
+| No | enWiki9 | 5000 | 29.7% |
+| Yes | enWiki9 | 5000 | 39.1% |
 
 
 ### Datasets

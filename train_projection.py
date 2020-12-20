@@ -123,6 +123,7 @@ if __name__ == '__main__':
                 loss += np_sg_model.train_on_batch(X,Y)
 
             print(f'Loss: {loss} after processing bacth_id {batch_id}')
+            print('=================================================\n')
             batch_id += 1
 
     tf.compat.v1.keras.backend.get_session().close()

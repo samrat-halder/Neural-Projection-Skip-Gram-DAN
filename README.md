@@ -26,9 +26,19 @@ This repository contains end-to-end implementation of Neural Projection with Ski
   
 7. Set n >= 10,000 to train the NP-SG model on alarger dataset.
 
-Please note the training has not been tested on GPU yet. (TODO)
 
-TO BE UPDATED SOON
+
+## Results
+
+| Trainable Embedding? | NP-SG train Dataset | Size | Test Acc. (SST-Fine) |
+| :---: | :---: | :---: | :---: | 
+| No | SST-Fine | 7000 | 30.9% |
+| Yes | SST-Fine | 7000 | 37.68% |
+| No | Wiki-9 | 1000 | 27.88% | 
+| Yes | Wiki-9 | 1000 | 38.51% | 
+| No | Wiki-9 | 5000 | 29.7% |
+| Yes | Wiki-9 | 5000 | 39.1% |
+
 
 ### Datasets
 

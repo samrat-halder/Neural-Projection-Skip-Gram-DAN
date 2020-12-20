@@ -26,7 +26,7 @@ This repository contains end-to-end implementation of Neural Projection with Ski
   OR \
   you can run the bash script `run.sh` 
   
-7. Set n >= 10,000 to train the NP-SG model on alarger dataset.
+7. Set n > 10,000 to train the NP-SG model on a larger corpus.
 
 
 

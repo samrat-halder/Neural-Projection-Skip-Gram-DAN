@@ -50,9 +50,9 @@ This repository contains end-to-end implementation of Neural Projection with Ski
 
 We have developed the pipeline to use wiki9, SST-Fine, and Bible Corpus for training the NP-SG model alongwith a DAN model on SST-Fine dataset for five class classification task.
 
-1. SST-Fine (to train test classification task)
-2. Bible corpus (from nltk)
-3. enwiki9 (to train NP-SG model)
+1. enwiki9 (to train NP-SG model)
+2. SST-Fine (to train test classification task) 
+3. Bible corpus (from nltk, for small scale test experiments)
 
 ### References
 

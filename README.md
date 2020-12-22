@@ -17,7 +17,7 @@ This repository contains end-to-end implementation of Neural Projection with Ski
   a. Training a NP-SG model with some corpus (we use a chunk of wiki9). The larger this corpus the better it is.\
   b. Using the embeddings from step 1, for any downstream task e.g. we train a DAN model for SST-fine data
   
-5. To test the setup set n=1000, test=True. 
+5. To test the pipeline set n=1000, test=True. 
 
 6. To run a complete experiement run the following three scripts:\
   a. `python3 data_prep.py`\

@@ -58,7 +58,7 @@ We have developed the pipeline to use wiki9, SST-Fine, and Bible Corpus for trai
 
 Few of recent papers that have shown state-of-the-art result with Neural Projections,
 
-1. Neural Projection Skip-Gram (https://arxiv.org/pdf/1906.01605.pdf)
-2. Deep Averaging Network (https://people.cs.umass.edu/~miyyer/pubs/2015_acl_dan.pdf)
-3. PRADO by Google Research (https://www.aclweb.org/anthology/D19-1506.pdf)
-4. Self-governing Neural Networks (https://www.aclweb.org/anthology/D18-1105.pdf)
+1. Neural Projection Skip-Gram (https://arxiv.org/pdf/1906.01605.pdf) 
+2. PRADO by Google Research (https://www.aclweb.org/anthology/D19-1506.pdf)
+3. Self-governing Neural Networks (https://www.aclweb.org/anthology/D18-1105.pdf)
+4. The classification model we have implemented in this research - Deep Averaging Network (https://people.cs.umass.edu/~miyyer/pubs/2015_acl_dan.pdf)

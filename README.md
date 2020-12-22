@@ -56,5 +56,9 @@ We have developed the pipeline to use wiki9, SST-Fine, and Bible Corpus for trai
 
 ### References
 
+Few of recent papers that has shown state-of-the-art results with Neural Projections,
+
 1. Neural Projection Skip-Gram (https://arxiv.org/pdf/1906.01605.pdf)
 2. Deep Averaging Network (https://people.cs.umass.edu/~miyyer/pubs/2015_acl_dan.pdf)
+3. PRADO by Google Research (https://www.aclweb.org/anthology/D19-1506.pdf)
+4. Self-governing Neural Networks (https://www.aclweb.org/anthology/D18-1105.pdf)

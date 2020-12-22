@@ -56,7 +56,7 @@ We have developed the pipeline to use wiki9, SST-Fine, and Bible Corpus for trai
 
 ### References
 
-Few of recent papers that has shown state-of-the-art results with Neural Projections,
+Few of recent papers that have shown state-of-the-art result with Neural Projections,
 
 1. Neural Projection Skip-Gram (https://arxiv.org/pdf/1906.01605.pdf)
 2. Deep Averaging Network (https://people.cs.umass.edu/~miyyer/pubs/2015_acl_dan.pdf)

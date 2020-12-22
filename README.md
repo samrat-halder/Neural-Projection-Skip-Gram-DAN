@@ -4,7 +4,6 @@ This repository contains end-to-end implementation of Neural Projection with Ski
 
 ### Steps
 
-
 1. Clone the repository.
 
 2. Run `pip install -r requirements.txt `. This will download and install all the required packages.
@@ -28,7 +27,13 @@ This repository contains end-to-end implementation of Neural Projection with Ski
   
 7. Set n > 10,000 to train the NP-SG model on a larger corpus.
 
+### Datasets
 
+We have developed the pipeline to use wiki9, SST-Fine, and Bible Corpus for training the NP-SG model alongwith a DAN model on SST-Fine dataset for five class classification task.
+
+1. enwiki9 (to train NP-SG model)
+2. SST-Fine (to train test classification task) 
+3. Bible corpus (from nltk, for small scale test experiments)
 
 ## Results
 
@@ -44,15 +49,6 @@ This repository contains end-to-end implementation of Neural Projection with Ski
 | Yes | enWiki9 | 30,000 | 38.42% | 
 | No | enWiki9 | 60,000 | 30.97% |
 | Yes | enWiki9 | 60,000 | 40.33% | 
-
-
-### Datasets
-
-We have developed the pipeline to use wiki9, SST-Fine, and Bible Corpus for training the NP-SG model alongwith a DAN model on SST-Fine dataset for five class classification task.
-
-1. enwiki9 (to train NP-SG model)
-2. SST-Fine (to train test classification task) 
-3. Bible corpus (from nltk, for small scale test experiments)
 
 ### References
 
